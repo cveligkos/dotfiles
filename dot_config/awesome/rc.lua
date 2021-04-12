@@ -227,6 +227,7 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
+local volume_step = "5%"
 -- {{{ Key bindings
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -324,9 +325,47 @@ globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+    -- Rofi
+    awful.key({ modkey }, "p", function() awful.spawn("rofi -show drun") end,
+              {description = "show the menubar", group = "launcher"}),
+    --Show/Hide bar
+    awful.key({ modkey }, "b",
+              function()
+                  awful.screen.focused().mywibox.visible = not awful.screen.focused().mywibox.visible
+              end,
+              {description = 'toggle bar', group = 'awesome'}),
+    -- Volume keys
+    awful.key({}, "XF86AudioRaiseVolume",
+              function()
+                awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +" .. volume_step)
+            end,
+            {description = "raise volume", group = "volume"}),
+    awful.key({}, "XF86AudioLowerVolume",
+              function()
+                awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -" .. volume_step)
+            end,
+            {description = "lower volume", group = "volume"}),
+    awful.key({}, "XF86AudioMute",
+              function()
+                awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+            end,
+            {description = "mute volume", group = "volume"}),
+    -- MPD playback keys
+    awful.key({}, "XF86AudioPlay",
+              function()
+                awful.spawn("mpc toggle")
+            end,
+            {description = "toggle play/pause", group = "mpd"}),
+    awful.key({}, "XF86AudioNext",
+              function()
+                awful.spawn("mpc next")
+            end,
+            {description = "play next track", group = "mpd"}),
+    awful.key({}, "XF86AudioPrev",
+              function()
+                awful.spawn("mpc prev")
+            end,
+            {description = "play previous track", group = "mpd"})
 )
 
 clientkeys = gears.table.join(
