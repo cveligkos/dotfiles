@@ -116,7 +116,7 @@ lua require('gitsigns').setup()
 let g:airline#extensions#tabline#enabled = 1
 
 " nvim-tresitter
-lua <<EOF
+lua << EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
