@@ -338,10 +338,25 @@ globalkeys = gears.table.join(
                 awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
             end,
             {description = "mute volume", group = "volume"}),
+    awful.key({ modkey }, "=",
+              function()
+                awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +" .. volume_step)
+            end,
+            {description = "raise volume", group = "volume"}),
+    awful.key({ modkey }, "-",
+              function()
+                awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -" .. volume_step)
+            end,
+            {description = "lower volume", group = "volume"}),
+    awful.key({ modkey, "Shift" }, "=",
+              function()
+                awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+            end,
+            {description = "mute volume", group = "volume"}),
     -- MPD playback keys
     awful.key({}, "XF86AudioPlay",
-              function()
-                awful.spawn("mpc toggle")
+        function()
+            awful.spawn("mpc toggle")
             end,
             {description = "toggle play/pause", group = "mpd"}),
     awful.key({}, "XF86AudioNext",
