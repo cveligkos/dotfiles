@@ -32,6 +32,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sheerun/vim-polyglot'
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
@@ -73,6 +74,9 @@ set number
 set relativenumber
 
 set hidden
+
+" Needed for nvim-compe
+set completeopt=menuone,noselect
 
 " Mappings
 let mapleader = " "
@@ -117,3 +121,17 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 EOF
+
+" nvim-lspconfig
+lua << EOF
+
+-- rust-analyzer
+require'lspconfig'.rust_analyzer.setup{}
+
+-- vimls
+require'lspconfig'.vimls.setup{}
+
+EOF
+
+" Jump to definition
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.definition()<CR>
