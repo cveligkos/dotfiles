@@ -93,7 +93,7 @@ nnoremap <C-p> :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>r :Rg 
 
-nmap <leader>c gcc
+nmap <C-_> gcc
 
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>pU :PlugUpgrade<CR>
