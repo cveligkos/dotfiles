@@ -83,7 +83,7 @@ set completeopt=menuone,noselect
 " Mappings
 let mapleader = " "
 nnoremap <leader>sv :source ~/.local/share/chezmoi/dot_config/nvim/init.vim<CR>
-nnoremap <leader>ev :vsplit ~/.local/share/chezmoi/dot_config/nvim/init.vim<CR>
+nnoremap <leader>ev :edit ~/.local/share/chezmoi/dot_config/nvim/init.vim<CR>
 
 nnoremap <M-s> :write<CR>
 nnoremap <M-q> :bd<CR>
