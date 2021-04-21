@@ -239,8 +239,6 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
@@ -322,6 +320,37 @@ globalkeys = gears.table.join(
                   awful.screen.focused().mywibox.visible = not awful.screen.focused().mywibox.visible
               end,
               {description = 'toggle bar', group = 'awesome'}),
+    -- Toggle redhsift
+    awful.key({ modkey }, "F6",
+              function()
+                  awful.spawn("pkill -USR1 '^redshift$'")
+              end,
+               {description = "Toggle redshift", group = "launcher"}),
+    -- Launch Programs
+    -- Networkmanager-dmenu
+    awful.key({ modkey }, "F12",
+              function()
+                  awful.spawn("networkmanager_dmenu")
+              end,
+               {description = "Networkmanager-dmenu", group = "launcher"}),
+    -- Chromium profile selection
+    awful.key({ modkey }, "F9",
+              function()
+                  awful.spawn("chromium-launcher")
+              end,
+               {description = "Chromium launcher", group = "launcher"}),
+    -- Chromium (default profile)
+    awful.key({ modkey }, "w",
+              function()
+                  awful.spawn("chromium")
+              end,
+               {description = "Chromium (default profile)", group = "launcher"}),
+    -- Dijo
+    awful.key({ modkey }, "F8",
+              function()
+                  awful.spawn(terminal .. " dijo")
+              end,
+               {description = "Dijo", group = "launcher"}),
     -- Volume keys
     awful.key({}, "XF86AudioRaiseVolume",
               function()
