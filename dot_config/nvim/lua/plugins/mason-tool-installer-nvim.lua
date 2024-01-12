@@ -7,12 +7,14 @@ return {
 				"lua_ls",
 				"rust_analyzer",
 				"intelephense",
+				"tailwindcss-language-server",
 
 				-- formatters
 				"stylua",
 				"prettierd",
 				"isort",
 				"black",
+				"rustywind",
 
 				--linters
 				"eslint_d",
