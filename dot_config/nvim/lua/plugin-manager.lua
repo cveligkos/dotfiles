@@ -39,6 +39,8 @@ local files = {
 	"plugins.oil",
 	"plugins.treesitter",
 	-- "plugins.neorg",
+	"plugins.copilot-lua",
+	"plugins.copilot-cmp",
 	"plugins.nvim-cmp",
 	"plugins.lspconfig",
 	"plugins.mason",
