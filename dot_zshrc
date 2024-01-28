@@ -74,12 +74,14 @@ fi
 # aliases
 # -------
 alias v='nvim'
+alias r='ranger'
 alias ls='eza'
 alias ll='eza -l'
 alias la='eza -la'
 alias lg='lazygit'
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias cz='chezmoi'
+alias pn='pnpm'
 
 # -----------
 # zsh options
