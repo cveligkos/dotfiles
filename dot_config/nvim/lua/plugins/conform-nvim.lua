@@ -9,6 +9,7 @@ return {
 				javascript = { { "prettierd", "prettier" } },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				php = { "pint" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

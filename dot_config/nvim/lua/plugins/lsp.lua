@@ -82,9 +82,9 @@ return {
 			end,
 
 			-- Next, you can provide targeted overrides for specific servers.
-			["rust_analyzer"] = function()
-				-- require("rust-tools").setup({})
-			end,
+			-- ["rust_analyzer"] = function()
+			-- 	-- require("rust-tools").setup({})
+			-- end,
 		}
 
 		mason.setup({})
