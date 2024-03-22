@@ -95,9 +95,11 @@ return {
 				"lua_ls",
 				"rust_analyzer",
 				"intelephense",
+				-- "phpactor",
 				"clangd",
 				-- "biome",
-				"jsonls",
+				-- "jsonls",
+				"gopls",
 			},
 
 			handlers = handlers,

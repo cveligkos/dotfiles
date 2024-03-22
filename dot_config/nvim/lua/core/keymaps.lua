@@ -63,10 +63,3 @@ vim.keymap.set("n", "<leader>p", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap 
 vim.keymap.set("n", "-", "<cmd>Oil<CR>", { noremap = true })
 
 vim.keymap.set("i", "jk", "<ESC>", { noremap = true })
-
--- telescope
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Fuzzy find w/ grep in cwd" })
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Fuzzy find open buffers" })
-vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Fuzzy find help" })
-vim.keymap.set("n", "<leader>frg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
