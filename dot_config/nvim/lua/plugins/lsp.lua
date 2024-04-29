@@ -138,11 +138,13 @@ return {
           "prettierd",
           "isort",
           "black",
+          "sqlfmt",
 
           --linters
           "eslint_d",
           "selene",
           "golangci-lint",
+          "sqlfluff",
         },
       })
 

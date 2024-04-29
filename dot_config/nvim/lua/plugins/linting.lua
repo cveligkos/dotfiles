@@ -12,6 +12,7 @@ return {
         javascript = { "eslint_d" },
         lua = { "selene" },
         go = { "golangcilint" },
+        sql = { "sqlfluff" },
       }
 
       local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

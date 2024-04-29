@@ -12,6 +12,7 @@ return {
           lua = { "stylua" },
           python = { "isort", "black" },
           php = { "pint" },
+          sql = { "sqlfmt" },
           yaml = { "yamlfmt" },
         },
 
