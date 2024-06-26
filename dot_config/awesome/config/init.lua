@@ -1,5 +1,3 @@
-require("config.init")
-require("config.variables")
 require("config.keys")
 require("config.rules")
 require("config.screen")
