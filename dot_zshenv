@@ -12,6 +12,10 @@ if [[ -d "$HOME/.scripts" ]]; then
     path=("$HOME/.scripts" $path)
 fi
 
+if [[ -d "$HOME/.cargo/bin" ]]; then
+    path=("$HOME/.cargo/bin" $path)
+fi
+
 # eliminates duplicates in *paths
 typeset -gU cdpath fpath path
 

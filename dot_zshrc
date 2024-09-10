@@ -78,6 +78,20 @@ if command -v ngrok &>/dev/null; then
     eval "$(ngrok completion)"
 fi
 
+# -----
+# yazi
+# -----
+if command -v yazi &>/dev/null; then
+    function yy() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+        yazi "$@" --cwd-file="$tmp"
+        if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+            cd -- "$cwd"
+        fi
+        rm -f -- "$tmp"
+    }
+fi
+
 # -------
 # aliases
 # -------
