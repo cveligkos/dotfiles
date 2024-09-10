@@ -1,25 +1,34 @@
 return {
+  -- "numToStr/Comment.nvim" {{{
   {
     "numToStr/Comment.nvim",
     opts = {},
   },
+  -- }}}
 
+  -- "lewis6991/gitsigns.nvim" {{{
   {
     "lewis6991/gitsigns.nvim",
     opts = {},
   },
+  -- }}}
 
+  -- "folke/trouble.nvim" {{{
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+  -- }}}
 
+  -- "folke/todo-comments.nvim" {{{
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   },
+  -- }}}
 
+  -- "hiphish/rainbow-delimiters.nvim" {{{
   {
     "hiphish/rainbow-delimiters.nvim",
     dependencies = {
@@ -49,7 +58,9 @@ return {
       })
     end,
   },
+  -- }}}
 
+  -- "folke/flash.nvim" {{{
   {
     "folke/flash.nvim",
     event = "VeryLazy",
@@ -97,6 +108,9 @@ return {
       },
     },
   },
+  -- }}}
+
+  -- "folke/which-key.nvim" {{{
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -104,8 +118,11 @@ return {
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
+    opts = {},
   },
+  -- }}}
 
+  -- "nvim-telescope/telescope.nvim" {{{
   {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
@@ -142,7 +159,9 @@ return {
       keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Fuzzy find help" })
     end,
   },
+  -- }}}
 
+  -- "nvim-neo-tree/neo-tree.nvim" {{{
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -175,12 +194,44 @@ return {
       })
     end,
   },
+  -- }}}
 
+  -- "stevearc/oil.nvim" {{{
   {
     "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
   },
+  -- }}}
 
   --   { "tpope/vim-fugitive" },
+
+  -- "ray-x/sad.nvim" {{{
+  {
+    "ray-x/sad.nvim",
+    dependencies = {
+      {
+        "ray-x/guihua.lua",
+        build = "cd lua/fzy && make",
+        opts = {},
+      },
+    },
+    opts = {
+      debug = false,
+      diff = "delta",
+    },
+  },
+  -- }}}
+
+  -- "nvim-pack/nvim-spectre" {{{
+  {
+    "nvim-pack/nvim-spectre",
+    enabled = false,
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      { "<leader>r", ":Spectre toggle<CR>", mode = "n", desc = "Toggle Spectre", noremap = true },
+    },
+    opts = {},
+  },
+  -- }}}
 }

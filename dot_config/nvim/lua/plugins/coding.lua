@@ -1,4 +1,5 @@
 return {
+  -- "ray-x/navigator.lua" {{{
   {
     "ray-x/navigator.lua",
     enabled = false,
@@ -21,13 +22,17 @@ return {
       })
     end,
   },
+  -- }}}
 
+  -- "windwp/nvim-autopairs" {{{
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     opts = {}, -- this is equalent to setup({}) function
   },
+  -- }}}
 
+  -- "hrsh7th/nvim-cmp" {{{
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -55,6 +60,7 @@ return {
         completion = {
           completeopt = "menu,menuone,preview,noselect",
         },
+        preselect = cmp.PreselectMode.None,
         snippet = {
           -- configure how nvim-cmp interacts with snippet engine
           expand = function(args)
@@ -100,7 +106,9 @@ return {
       })
     end,
   },
+  -- }}}
 
+  -- "NvChad/nvim-colorizer.lua" {{{
   {
     "NvChad/nvim-colorizer.lua",
     config = function()
@@ -111,7 +119,9 @@ return {
       })
     end,
   },
+  -- }}}
 
+  -- "L3MON4D3/LuaSnip" {{{
   {
     "L3MON4D3/LuaSnip",
     -- follow latest release.
@@ -119,7 +129,9 @@ return {
     -- install jsregexp (optional!).
     build = "make install_jsregexp",
   },
+  -- }}}
 
+  -- "kylechui/nvim-surround" {{{
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -128,4 +140,5 @@ return {
       require("nvim-surround").setup({})
     end,
   },
+  -- }}}
 }

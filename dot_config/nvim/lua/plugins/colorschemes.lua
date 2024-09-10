@@ -1,5 +1,6 @@
 return {
 
+  -- "Shatur/neovim-ayu" {{{
   {
     "Shatur/neovim-ayu",
     lazy = false,
@@ -12,7 +13,9 @@ return {
       })
     end,
   },
+  -- }}}
 
+  -- "catppuccin/nvim" {{{
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -63,13 +66,16 @@ return {
       })
     end,
   },
+  -- }}}
 
+  -- "folke/tokyonight.nvim" {{{
   {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
   },
+  -- }}}
 
   { "Shatur/neovim-ayu" },
   --   { "nathangrigg/vim-beancount" },

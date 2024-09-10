@@ -1,4 +1,5 @@
 return {
+  -- "nvim-lualine/lualine.nvim" {{{
   {
     "nvim-lualine/lualine.nvim",
     config = function()
@@ -68,7 +69,9 @@ return {
       })
     end,
   },
+  -- }}}
 
+  -- "folke/noice.nvim" {{{
   {
     "folke/noice.nvim",
     enabled = false,
@@ -105,14 +108,18 @@ return {
       })
     end,
   },
+  -- }}}
 
+  -- "stevearc/dressing.nvim" {{{
   {
     "stevearc/dressing.nvim",
     enabled = false,
     event = "VeryLazy",
     opts = {},
   },
+  -- }}}
 
+  -- "lukas-reineke/indent-blankline.nvim" {{{
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
@@ -120,11 +127,14 @@ return {
       require("ibl").setup()
     end,
   },
+  -- }}}
 
+  -- "folke/zen-mode.nvim" {{{
   {
     "folke/zen-mode.nvim",
     keys = {
       { "<leader>z", "<cmd>ZenMode<cr>", mode = "n", desc = "Toggle ZenMode" },
     },
   },
+  -- }}}
 }

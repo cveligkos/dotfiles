@@ -16,6 +16,7 @@
 -- end
 
 return {
+  -- "neovim/nvim-lspconfig" {{{
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
@@ -23,7 +24,9 @@ return {
       { "antosha417/nvim-lsp-file-operations", config = true },
     },
   },
+  -- }}}
 
+  -- "williamboman/mason.nvim" {{{
   {
     "williamboman/mason.nvim",
     dependencies = {
@@ -126,6 +129,7 @@ return {
           -- "biome",
           -- "jsonls",
           "gopls",
+          "bashls",
         },
 
         handlers = handlers,
@@ -139,12 +143,15 @@ return {
           "isort",
           "black",
           "sqlfmt",
+          "clang-format",
+          "shfmt",
 
           --linters
           "eslint_d",
           "selene",
           "golangci-lint",
           "sqlfluff",
+          "shellcheck",
         },
       })
 
@@ -156,14 +163,18 @@ return {
       end
     end,
   },
+  -- }}}
 
+  -- "ray-x/lsp_signature.nvim" {{{
   {
     "ray-x/lsp_signature.nvim",
     config = function()
       require("lsp_signature").setup({})
     end,
   },
+  -- }}}
 
+  -- "nvimdev/lspsaga.nvim" {{{
   {
     "nvimdev/lspsaga.nvim",
     dependencies = {
@@ -179,4 +190,5 @@ return {
       })
     end,
   },
+  -- }}}
 }

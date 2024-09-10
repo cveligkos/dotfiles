@@ -1,4 +1,5 @@
 return {
+  -- "mfussenegger/nvim-lint" {{{
   {
     "mfussenegger/nvim-lint",
     event = {
@@ -12,6 +13,7 @@ return {
         javascript = { "eslint_d" },
         lua = { "selene" },
         go = { "golangcilint" },
+        sh = { "shellcheck" },
         sql = { "sqlfluff" },
       }
 
@@ -29,4 +31,5 @@ return {
       end, { desc = "Trigger linting for current file" })
     end,
   },
+  -- }}}
 }

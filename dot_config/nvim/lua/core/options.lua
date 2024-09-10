@@ -30,4 +30,4 @@ opt.foldmethod = "expr"
 opt.smartcase = true
 opt.ignorecase = true
 
-
+opt.foldmethod = "marker"
