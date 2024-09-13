@@ -1,3 +1,3 @@
 return {
-  { "mkdir.nvim" },
+  { "jghauser/mkdir.nvim" },
 }
