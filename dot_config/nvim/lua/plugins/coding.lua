@@ -24,13 +24,11 @@ return {
   },
   -- }}}
 
-  -- "windwp/nvim-autopairs" {{{
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     opts = {}, -- this is equalent to setup({}) function
   },
-  -- }}}
 
   -- "hrsh7th/nvim-cmp" {{{
   {
@@ -108,9 +106,8 @@ return {
   },
   -- }}}
 
-  -- "NvChad/nvim-colorizer.lua" {{{
   {
-    "NvChad/nvim-colorizer.lua",
+    "catgoose/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup({
         user_default_options = {
@@ -119,7 +116,6 @@ return {
       })
     end,
   },
-  -- }}}
 
   -- "L3MON4D3/LuaSnip" {{{
   {

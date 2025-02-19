@@ -45,6 +45,21 @@ return {
       -- used to enable autocompletion (assign to every lsp server config)
       local capabilities = cmp_nvim_lsp.default_capabilities()
 
+      local border = {
+        { "╭", "FloatBorder" },
+        { "─", "FloatBorder" },
+        { "╮", "FloatBorder" },
+        { "│", "FloatBorder" },
+        { "╯", "FloatBorder" },
+        { "─", "FloatBorder" },
+        { "╰", "FloatBorder" },
+        { "│", "FloatBorder" },
+      }
+
+      local border_handlers = {
+        ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+        ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+      }
       local handlers = {
         -- The first entry (without a key) will be the default handler
         -- and will be called for each installed server that doesn't have
@@ -52,6 +67,7 @@ return {
         function(server_name) -- default handler (optional)
           require("lspconfig")[server_name].setup({
             capabilities = capabilities,
+            handlers = border_handlers,
           })
         end,
 
@@ -76,6 +92,7 @@ return {
         ["emmet_ls"] = function()
           lspconfig.emmet_ls.setup({
             capabilities = capabilities,
+            handlers = border_handlers,
             filetypes = {
               "html",
               "typescriptreact",
@@ -92,6 +109,7 @@ return {
         ["lua_ls"] = function()
           lspconfig.lua_ls.setup({
             capabilities = capabilities,
+            handlers = border_handlers,
             settings = { -- custom settings for lua
               Lua = {
                 -- make the language server recognize "vim" global
@@ -116,7 +134,11 @@ return {
         -- end,
       }
 
-      mason.setup({})
+      mason.setup({
+        ui = {
+          border = "rounded",
+        },
+      })
 
       mason_lspconfig.setup({
         ensure_installed = {
@@ -130,6 +152,16 @@ return {
           -- "jsonls",
           "gopls",
           "bashls",
+          "cssls",
+          "eslint",
+          -- "graphql",
+          "html",
+          "jsonls",
+          -- "prismals",
+          "tailwindcss",
+          "ts_ls",
+          "pyright",
+          "biome",
         },
 
         handlers = handlers,
@@ -187,6 +219,7 @@ return {
         lightbulb = {
           virtual_text = false,
         },
+        border = "rounded",
       })
     end,
   },

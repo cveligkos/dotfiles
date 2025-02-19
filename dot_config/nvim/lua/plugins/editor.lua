@@ -234,4 +234,14 @@ return {
     opts = {},
   },
   -- }}}
+
+  { "ledger/vim-ledger" },
+  { "gpanders/nvim-parinfer" },
+  { "sheerun/vim-polyglot" },
+  { "Fymyte/rasi.vim", ft = "rasi" },
+  { "imsnif/kdl.vim" },
+  { "fladson/vim-kitty" },
+  -- { "nathangrigg/vim-beancount" },
+  -- { "terrastruct/d2-vim" },
+  -- { "elkowar/yuck.vim" },
 }

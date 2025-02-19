@@ -6,7 +6,7 @@ vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
-vim.keymap.set("n", "<leader>rs", ":LspRestart<cr>", opts)
+vim.keymap.set("n", "<leader>rs", ":LspRestart<cr>")
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -49,15 +49,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.keymap.set("n", ";", ":", { noremap = true, silent = false })
 
 vim.keymap.set({ "n", "i" }, "<C-s>", "<cmd>lua vim.api.nvim_command('write')<CR>")
-vim.keymap.set("n", "<C-n>", ":nohlsearch<CR>", { noremap = true })
+vim.keymap.set("n", "<leader><space>", "<cmd>Telescope buffers<CR>")
+vim.keymap.set("n", "<C-n>", ":nohlsearch<CR>")
 -- movement
 vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true })
--- lsp
-vim.keymap.set("n", "<leader>p", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true })
 
 vim.keymap.set("n", "-", "<cmd>Oil<CR>", { noremap = true })
 
 vim.keymap.set("i", "jk", "<ESC>", { noremap = true })
+
+vim.keymap.set({ "x", "n" }, "y", '"+y', { silent = true })
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })

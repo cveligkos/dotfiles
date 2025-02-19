@@ -75,12 +75,4 @@ return {
     opts = {},
   },
   -- }}}
-
-  { "Shatur/neovim-ayu" },
-  --   { "nathangrigg/vim-beancount" },
-  { "sheerun/vim-polyglot" },
-  { "Fymyte/rasi.vim", ft = "rasi" },
-  { "imsnif/kdl.vim" },
-  { "fladson/vim-kitty" },
-  { "terrastruct/d2-vim" },
 }

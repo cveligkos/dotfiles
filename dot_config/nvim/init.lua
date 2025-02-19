@@ -3,6 +3,7 @@ local modules = {
   "core.keymaps",
   "core.lazy",
   "core.colorscheme",
+  "core.misc",
 }
 
 for _, v in ipairs(modules) do
